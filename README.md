@@ -18,4 +18,5 @@ Use it like:
         print(texstr, file=text_file)
 
 Then reference the number in your tex source with \input{} like:
+
     The value of $\pi$ is \input{x.tex}.

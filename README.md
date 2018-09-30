@@ -16,7 +16,7 @@ Use it like this:
     # decimal
     texstr = texf.decimal("{:4.2f}".format(x)) # -> $3.14$
     # scientific notation
-    texstr = texf.scinot("{:1E}".format(x)) # -> $3\times10^{0}$
+    texstr = texf.scinot("{:1.0E}".format(x)) # -> $3\times10^{+00}$
 
     # Then write the number to a file:
     with open("x.tex","w") as text_file:

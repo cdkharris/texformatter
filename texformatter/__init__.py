@@ -4,29 +4,22 @@ October 2018
 
 This module contains functions for printing numbers and tables in TeX format.
 
-Use it like:
+Functions
+----------
 
-    import texformatter as texf
-    x = 3.14
+decimal: Returns a decimal string formatted for TeX math mode.
 
-    # decimal
-    texstr = texf.decimal("{:4.2f}".format(x)) -> $3.14$
-    # scientific notation
-    texstr = texf.scinot("{:1E}".format(x)) -> $3\times10^{0}$
+scinot: Returns a scientific notation string formatted for TeX math mode.
 
-    # Then write the number to a file:
-    with open("x.tex","w") as text_file:
-        print(texstr, file=text_file)
+dict2tab: Returns a table string formatted for TeX.
 
-Then reference the number in your tex source with \input{} like:
-    The value of $\pi$ is \input{x.tex}.
 """
 
 MATH_DELIM = "$"
-SCINOT = ["\times10^{","}"]
-TABENV = [r"\begin{tabular}{","}","\end{tabular}"]
-NEWLINE = "\n"
-HLINE = "\hline"
+SCINOT = [r"\times10^{","}"]
+TABENV = [r"\begin{tabular}{","}",r"\end{tabular}"]
+NEWLINE = r"\n"
+HLINE = r"\hline"
 ROW_DELIM = r"\\"
 COL_DELIM = "&"
 

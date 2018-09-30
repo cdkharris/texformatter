@@ -1,9 +1,13 @@
 Camilla D. K. Harris
 October 2018
 
+# texformatter
+
 This module contains functions for printing numbers and tables in TeX format.
 
-Use it like:
+## Examples
+
+Use it like this:
 
     import texformatter as texf
     x = 3.14
@@ -20,3 +24,16 @@ Use it like:
 Then reference the number in your tex source with \input{} like:
 
     The value of $\pi$ is \input{x.tex}.
+
+Print a table:
+
+    import texformatter as texf
+    a = {"b":["1","2","3"],"c":["1","2","3"]}
+    print(texf.dict2tab(a,columns=False))
+
+Output will be:
+
+    \begin{tabular}{clll}
+    b&1&2&3\\
+    c&1&2&3\\
+    \end{tabular}
